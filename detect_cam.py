@@ -22,7 +22,7 @@ reverse_replacements = {
 }
 
 # === Font ===
-font_path = "C:/Windows/Fonts/arial.ttf"
+font_path = "fonts/arial.ttf"
 font = ImageFont.truetype(font_path, 32)
 
 # === Mediapipe ===
