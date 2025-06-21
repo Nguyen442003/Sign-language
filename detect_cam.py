@@ -22,8 +22,16 @@ reverse_replacements = {
 }
 
 # === Font ===
-font_path = "fonts/arial.ttf"
-font = ImageFont.truetype(font_path, 32)
+def get_font(size=32):
+    # Font phổ biến có sẵn trên Linux server (Render)
+    linux_font = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    if os.path.exists(linux_font):
+        return ImageFont.truetype(linux_font, size)
+    else:
+        print("⚠️ Không tìm thấy font chuẩn. Sử dụng font mặc định.")
+        return ImageFont.load_default()
+
+font = get_font(32)
 
 # === Mediapipe ===
 mp_hands = mp.solutions.hands
